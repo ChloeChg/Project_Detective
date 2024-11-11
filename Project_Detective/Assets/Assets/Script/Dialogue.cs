@@ -12,11 +12,11 @@ public class Dialogue : MonoBehaviour
     private int index;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        textComponent.text = string.Empty;
-        StartDialogue();
-    }
+    //void Start()
+    //{
+    //    textComponent.text = string.Empty;
+    //    StartDialogue();
+    //}
 
     // Update is called once per frame
     void Update()
@@ -35,9 +35,10 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue()
     {
         index = 0;
+        textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
     }
 

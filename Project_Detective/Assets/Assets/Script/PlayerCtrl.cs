@@ -27,7 +27,7 @@ public class PlayerCtrl : MonoBehaviour
             RaycastHit2D theObject = Physics2D.Raycast(transform.position, lastDirection, distance, layerMask);
             // Debug.Log(theObject.collider.gameObject);
             if (theObject.collider != null) {
-                IInteractableObejct interactable = theObject.collider.gameObject.GetComponent<IInteractableObejct>();
+                InteractableObject interactable = theObject.collider.gameObject.GetComponent<InteractableObject>();
                 interactable?.Interact();
             }
         } 
