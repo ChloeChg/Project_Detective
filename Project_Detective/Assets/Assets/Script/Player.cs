@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerCtrl : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
     [SerializeField] private float movSpeed;
@@ -12,6 +12,8 @@ public class PlayerCtrl : MonoBehaviour
 
     private float speedX, speedY;
     private Vector2 lastDirection;
+    private Boolean isWalking = false;
+    private Boolean isFacingLeft = true;
 
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -40,10 +42,22 @@ public class PlayerCtrl : MonoBehaviour
         speedY = Input.GetAxisRaw("Vertical");
         Vector2 direction = new(speedX, speedY);
         direction = direction.normalized;
+
+        // set walking and left boolean
+        isWalking = direction != Vector2.zero;
+        isFacingLeft = speedX < 0;
         if (direction != Vector2.zero) {
             lastDirection = direction; // update last direction
         }
         HandleInteract();
         rb.velocity = direction * movSpeed;
+    }
+
+    public bool IsWalking() {
+        return isWalking;
+    }
+
+    public bool IsFacingLeft() {
+        return isFacingLeft;
     }
 }
