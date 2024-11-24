@@ -593,10 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1115439361}
-  lines:
-  - 342321432134134
-  - 34211243132443213214
-  textSpeed: 0.1
+  dialogueData: {fileID: 0}
 --- !u!114 &359867618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2288,6 +2285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 359867617}
+  dialogueData: {fileID: 11400000, guid: 55694bcee2f2e2d41884d77d1e814fb0, type: 2}
 --- !u!1001 &7520805351966105777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2356,6 +2354,10 @@ PrefabInstance:
       propertyPath: polaroid
       value: 
       objectReference: {fileID: 8261295210037584652, guid: 0639de0d2d9b4fb42b72808fa99558e6, type: 3}
+    - target: {fileID: 6467367197306368862, guid: 5e5b706eb2c270248875bbf9634c698e, type: 3}
+      propertyPath: dialogueData
+      value: 
+      objectReference: {fileID: 11400000, guid: d5ea3cc30fcb04d4dbbce93c5ac99eba, type: 2}
     - target: {fileID: 6467367197306368862, guid: 5e5b706eb2c270248875bbf9634c698e, type: 3}
       propertyPath: inventoryMenu
       value: 
