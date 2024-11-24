@@ -1,42 +1,34 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent;
-    public string[] lines;
-    public float textSpeed;
+    public TextMeshProUGUI textComponent; // Reference to the UI text
+    public DialogueData dialogueData;    // Reference to the ScriptableObject
 
     private int index;
 
-    // Start is called before the first frame update
-    //void Start()
-    //{
-    //    textComponent.text = string.Empty;
-    //    StartDialogue();
-    //}
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) // Detect mouse click
         {
-            if (textComponent.text == lines[index])
+            if (textComponent.text == dialogueData.lines[index])
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                textComponent.text = lines[index];
+                textComponent.text = dialogueData.lines[index];
             }
         }
     }
 
     public void StartDialogue()
     {
+        if (dialogueData == null) return;
+
         index = 0;
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
@@ -44,16 +36,16 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray())
+        foreach (char c in dialogueData.lines[index].ToCharArray())
         {
             textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            yield return new WaitForSeconds(dialogueData.textSpeed);
         }
     }
 
     void NextLine()
     {
-        if (index  < lines.Length - 1)
+        if (index < dialogueData.lines.Length - 1)
         {
             index++;
             textComponent.text = string.Empty;
@@ -61,7 +53,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            gameObject.SetActive(false); // Hide the dialogue box when done
         }
     }
 }
