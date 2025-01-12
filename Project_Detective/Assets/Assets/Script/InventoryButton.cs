@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class InventoryButton : MonoBehaviour
 {
-    public GameObject inventoryMenu;
+    public GameObject menuToOpen;
+    public GameObject menuToClose;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +18,11 @@ public class InventoryButton : MonoBehaviour
         
     }
 
+    // Switches inventory to the right tab when clicked
+    // Click again to close
     public void OpenAndCloseMenu()
     {
-        inventoryMenu.gameObject.SetActive(!inventoryMenu.gameObject.activeSelf);
+        menuToOpen.gameObject.SetActive(!menuToOpen.gameObject.activeSelf);
+        menuToClose.gameObject.SetActive(false);
     }
 }

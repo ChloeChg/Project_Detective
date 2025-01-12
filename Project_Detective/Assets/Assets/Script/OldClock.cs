@@ -9,9 +9,17 @@ public class OldClock : MonoBehaviour, InteractableObject
     public DialogueData dialogueData; // Unique dialogue data for this NPC
 
     public GameObject polaroid;
-    public GameObject inventoryMenu;
+    public GameObject logicPolaroid;
+    public GameObject polaroidInventory;
+    public GameObject logicInventory;
     public void Interact()
     {
+        Debug.Log("My name is " + transform.name);
+
+        // adds a polaroid to your inventory and logic menu
+        Instantiate(polaroid, new Vector2(0, 0), Quaternion.identity, polaroidInventory.transform);
+        Instantiate(logicPolaroid, new Vector2(0, 0), Quaternion.identity, logicInventory.transform);
+
         // Ensure DialogueData is set and Dialogue system is available
         if (dialogue != null && dialogueData != null)
         {
