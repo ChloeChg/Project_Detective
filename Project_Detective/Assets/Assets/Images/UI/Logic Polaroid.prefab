@@ -103,6 +103,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8499058757387537263}
   m_SourcePrefab: {fileID: 100100000, guid: 0639de0d2d9b4fb42b72808fa99558e6, type: 3}
+--- !u!114 &3351193760799867705 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2942422423826033721, guid: 0639de0d2d9b4fb42b72808fa99558e6, type: 3}
+  m_PrefabInstance: {fileID: 456061353626447616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426874112732630028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8426874112732630028 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8261295210037584652, guid: 0639de0d2d9b4fb42b72808fa99558e6, type: 3}
@@ -120,7 +131,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96210f0d3ae846a4c9b29e20472b39c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
   canvas: {fileID: 6062028349819924495, guid: e4adef509f670d44a971a632411b8385, type: 3}
+  image: {fileID: 3351193760799867705}
+  parentAfterDrag: {fileID: 0}
+  indexAfterDrag: 0
+  dragTransparency: 0.9
+  PointerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  PointerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  PointerUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  PointerDownEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  BeginDragEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  EndDragEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  SelectEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!225 &8499058757387537263
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -130,6 +167,6 @@ CanvasGroup:
   m_GameObject: {fileID: 8426874112732630028}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0

@@ -91,6 +91,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1bdc6c47919f348af42125f9171647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  polaroid: {fileID: 8261295210037584652, guid: 0639de0d2d9b4fb42b72808fa99558e6, type: 3}
+  logicPolaroid: {fileID: 8426874112732630028, guid: 1c4b986a85a321f4f815bd2da509c1d6, type: 3}
+  polaroidInventory: {fileID: 0}
+  logicInventory: {fileID: 0}
 --- !u!1 &7755693108416007428
 GameObject:
   m_ObjectHideFlags: 0
