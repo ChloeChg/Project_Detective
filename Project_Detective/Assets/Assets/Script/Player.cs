@@ -23,16 +23,34 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         
     }
+
     private void HandleInteract() {
+
+        // Kai's code for detecting interactable objects
         if (Input.GetKeyDown(KeyCode.E)) {
-            float distance = 1f;
-            RaycastHit2D theObject = Physics2D.Raycast(transform.position, lastDirection, distance, layerMask);
-            // Debug.Log(theObject.collider.gameObject);
-            if (theObject.collider != null) {
-                InteractableObject interactable = theObject.collider.gameObject.GetComponent<InteractableObject>();
+            //float distance = 0.3f;
+            //RaycastHit2D theObject = Physics2D.Raycast(transform.position, lastDirection, distance, layerMask);
+            //// Debug.Log(theObject.collider.gameObject);
+            //if (theObject.collider != null) {
+            //    InteractableObject interactable = theObject.collider.gameObject.GetComponent<InteractableObject>();
+            //    interactable?.Interact();
+            //}
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        Boolean isInteracting = false;
+        if (Input.GetKey(KeyCode.E) && !isInteracting)
+        {
+            isInteracting = true;
+            Debug.Log("interacted");
+            if (other.GetComponent<Collider2D>() != null)
+            {
+                InteractableObject interactable = other.GetComponent<Collider2D>().gameObject.GetComponent<InteractableObject>();
                 interactable?.Interact();
             }
-        } 
+        }
     }
 
     // Update is called once per frame
