@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19d8bc421389e544a4cc8fda6ca9512, type: 3}
+  m_Name: GrannyDialogue
+  m_EditorClassIdentifier: 
+  lines:
+  - I am the granny
+  - I need my wifi router fixed
+  - My house is really spooky
+  - Freddy Fazbear is in the basement!
+  textSpeed: 0.05
