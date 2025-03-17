@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - I am the granny
-  - I need my wifi router fixed
-  - My house is really spooky
-  - Freddy Fazbear is in the basement!
+  - Here, have this polaroid!
+  - '*Gives Polaroid*'
+  - (Check your bag or logic menu to see the polaroid)
   textSpeed: 0.05

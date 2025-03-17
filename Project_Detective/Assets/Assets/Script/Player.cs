@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         Boolean isInteracting = false;
-        if (Input.GetKey(KeyCode.E) && !isInteracting)
+        if (Input.GetKeyDown(KeyCode.E) && !isInteracting)
         {
             isInteracting = true;
             Debug.Log("interacted");
