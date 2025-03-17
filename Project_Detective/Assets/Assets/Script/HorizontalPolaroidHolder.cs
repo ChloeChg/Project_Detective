@@ -59,7 +59,8 @@ public class HorizontalPolaroidHolder : MonoBehaviour, IDropHandler, IPointerEnt
     public void OnPointerEnter(PointerEventData eventData)
     {
         GameObject polaroid = eventData.pointerDrag;
-        LogicPolaroid draggableItem = polaroid.GetComponent<LogicPolaroid>();
+        LogicPolaroid draggableItem = null;
+        if (polaroid != null) { draggableItem = polaroid.GetComponent<LogicPolaroid>(); }
         if (!polaroids.Contains(draggableItem)) { polaroids.Add(draggableItem); }
         draggableItem.isBeingUsed = false;
         draggableItem.parentAfterDrag = transform;
@@ -68,7 +69,7 @@ public class HorizontalPolaroidHolder : MonoBehaviour, IDropHandler, IPointerEnt
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        GameObject polaroid = eventData.pointerDrag;
+        GameObject polaroid = eventData.pointerDrag; 
         LogicPolaroid draggableItem = polaroid.GetComponent<LogicPolaroid>();
     }
 
